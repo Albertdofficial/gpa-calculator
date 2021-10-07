@@ -1,0 +1,165 @@
+/* Backgrounds */
+/* 
+(main background): hsl(268, 75%, 9%)
+(toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+### Keys
+(key background): hsl(281, 89%, 26%)
+(key shadow): hsl(285, 91%, 52%)
+(key background, toggle): hsl(176, 100%, 44%)
+(key shadow): hsl(177, 92%, 70%)
+
+(key background): hsl(268, 47%, 21%)
+(key shadow): hsl(290, 70%, 36%)
+
+### Text
+- Light yellow: hsl(52, 100%, 62%)
+- Very dark blue: hsl(198, 20%, 13%)
+- White (text): hsl(0, 0, 100%)
+
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.project-title {
+  color: rgb(240, 232, 232);
+  font-family: sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+/* Calculator container */
+.calculator {
+  background-color: hsl(268, 75%, 9%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.calculator-display {
+  border: 1px solid rgb(107, 105, 105);
+  border-bottom: none;
+  background-color: hsl(268, 71%, 12%);
+  width: 40rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40rem;
+  color: hsl(52, 100%, 62%);
+  font-weight: 700;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.calculator-display h1 {
+  color: #fff;
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: flex-start;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 2rem;
+}
+
+.calculator-display h2 {
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(153, 152, 152);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(112, 110, 110);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+.calculator-display {
+  font-size: 2rem;
+}
+
+/* Button container */
+.calculator-buttons {
+  border: 1px solid rgb(107, 105, 105);
+  border-top: none;
+  background-color: hsl(268, 71%, 12%);
+  width: 36rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+button {
+  color: hsl(52, 100%, 62%);
+  padding: 0.5rem 1.75rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 3rem;
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0 1px 0 0.5px hsl(285, 91%, 52%);
+}
+
+button:hover {
+  filter: brightness(120%);
+}
+
+.reset-btn {
+  font-size: 2rem;
+
+  background-color: hsl(268, 47%, 21%);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 0 0.5px hsl(290, 70%, 36%);
+}
+
+.gpa-btn {
+  grid-column: 3 / 5;
+  font-size: 2rem;
+  background-color: hsl(268, 47%, 21%);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 0 0.5px hsl(290, 70%, 36%);
+}
+
+.next-btn {
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  grid-column: 4;
+  grid-row: 1 / 3;
+  background-color: hsl(268, 47%, 21%);
+  box-shadow: 0 1px 0 0.5px hsl(290, 70%, 36%);
+}
+
+.delete-btn {
+  background-color: hsl(268, 47%, 21%);
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 1px 0 0.5px hsl(290, 70%, 36%);
+}
