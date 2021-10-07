@@ -14,6 +14,7 @@ let creditsArray = [];
 let numOfCourses = 1;
 let point = 0,
   credit = 0;
+let courseCount = 1;
 
 // Functions
 function sendNumberValue(value) {
@@ -24,10 +25,8 @@ function sendNumberValue(value) {
 
   if (guideDisplay.textContent.endsWith("grade")) {
     point = inputDisplay.textContent;
-    // console.log("point", point);
   } else {
     credit = inputDisplay.textContent;
-    // console.log("credit", credit);
   }
 }
 
@@ -36,7 +35,8 @@ function addDecimal() {
 }
 
 function callResetBtn() {
-  numOfCourses = 0;
+  numOfCourses = 1;
+  courseCount = 1;
   inputDisplay.textContent = "0.00";
   guideDisplay.textContent = "Enter credit hours for course No.1";
   pointsArray = [];
@@ -45,17 +45,14 @@ function callResetBtn() {
 
 function callNext() {
   let sum = 0;
+  courseCount = numOfCourses;
   inputDisplay.textContent = "0.00";
   if (guideDisplay.textContent.includes("credit")) {
     guideDisplay.textContent = `Enter the point of your letter grade`;
     creditsArray.push(credit);
-    // console.log("credit", credit);
-    console.log("creditsArray", creditsArray);
   } else {
     guideDisplay.textContent = `Enter credit hours for course No.${++numOfCourses}`;
     pointsArray.push(point);
-    // console.log("point", point);
-    console.log("pointsArray", pointsArray);
   }
 }
 
@@ -68,20 +65,19 @@ function sumCreditHours() {
 }
 
 function calculateGpa() {
-  pointsArray.push(point);
+  if (courseCount === numOfCourses) {
+    pointsArray.push(point);
+  }
   let sum = 0;
   for (let i = 0; i < creditsArray.length; i++) {
     sum += creditsArray[i] * pointsArray[i];
-    console.log(sum);
   }
 
   const creditHrsSum = sumCreditHours();
-  console.log(creditHrsSum);
   if (creditHrsSum) {
     const gpa = (sum / creditHrsSum).toFixed(2);
     inputDisplay.textContent = `GPA: ${gpa}`;
     guideDisplay.textContent = "";
-    console.log("gpa", gpa);
   }
 }
 
