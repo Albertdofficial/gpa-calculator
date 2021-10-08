@@ -34,25 +34,20 @@ function addDecimal() {
   inputDisplay.textContent = `${inputDisplay.textContent}.`;
 }
 
-function callResetBtn() {
-  numOfCourses = 1;
-  courseCount = 1;
-  inputDisplay.textContent = "0.00";
-  guideDisplay.textContent = "Enter credit hours for course No.1";
-  pointsArray = [];
-  creditsArray = [];
-}
-
 function callNext() {
   let sum = 0;
   courseCount = numOfCourses;
   inputDisplay.textContent = "0.00";
-  if (guideDisplay.textContent.includes("credit")) {
+  if (guideDisplay.textContent.includes("credit") && credit) {
     guideDisplay.textContent = `Enter the point of your letter grade`;
     creditsArray.push(credit);
+    credit = 0;
   } else {
-    guideDisplay.textContent = `Enter credit hours for course No.${++numOfCourses}`;
-    pointsArray.push(point);
+    if (point) {
+      guideDisplay.textContent = `Enter credit hours for course No.${++numOfCourses}`;
+      pointsArray.push(point);
+      point = 0;
+    }
   }
 }
 
@@ -81,6 +76,14 @@ function calculateGpa() {
   }
 }
 
+function callResetBtn() {
+  numOfCourses = 1;
+  courseCount = 1;
+  inputDisplay.textContent = "0.00";
+  guideDisplay.textContent = "Enter credit hours for course No.1";
+  pointsArray = [];
+  creditsArray = [];
+}
 // Event listeners
 buttons.forEach((button) => {
   if (button.classList.contains("value")) {
