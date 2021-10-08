@@ -164,39 +164,46 @@ button:hover {
 }
 
 /* Media queries */
-@media screen and (max-width: 414px){
-    .calculator-buttons{
-        width: 30rem;
-        margin: 0 2rem;
-    }
+@media screen and (max-width: 480px) {
+  .calculator-buttons {
+    width: 35rem;
+    margin: 0 1rem;
+  }
 
-    .calculator-display{
-        width: 34rem;
-    }
+  .calculator-display {
+    width: 39rem;
+  }
 
-    .calculator-display h1{
-        font-size: 1.75rem;
-    }
+  .calculator-display h1 {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .calculator-buttons {
+    width: 30rem;
+    margin: 0 1rem;
+  }
+
+  .calculator-display {
+    width: 34rem;
+  }
 }
 
 @media screen and (max-width: 320px) {
-     .calculator-buttons{
-        width: 25rem;
-        margin: 0 1rem;
-    }
+  .calculator-buttons {
+    width: 24rem;
+  }
 
-    .calculator-display{
-        width: 29rem;
-    }
+  .calculator-display {
+    width: 28rem;
+  }
 
-     .calculator-display h1{
-        font-size: 1.5rem;
-    }
+  .calculator-display h1 {
+    font-size: 1.5rem;
+  }
 
-    button{
-        font-size: 2rem;
-        width: 99%;
-    }
-
-    
+  .txt{
+    font-size: 1.25rem;
+    width: 98%;
+  }
 }
