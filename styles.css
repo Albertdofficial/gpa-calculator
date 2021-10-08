@@ -55,7 +55,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40rem;
   color: hsl(52, 100%, 62%);
   font-weight: 700;
   border-radius: 1rem;
@@ -162,4 +161,42 @@ button:hover {
   font-size: 2rem;
   color: white;
   box-shadow: 0 1px 0 0.5px hsl(290, 70%, 36%);
+}
+
+/* Media queries */
+@media screen and (max-width: 480px){
+    .calculator-buttons{
+        width: 30rem;
+        margin: 0 2rem;
+    }
+
+    .calculator-display{
+        width: 34rem;
+    }
+
+    .calculator-display h1{
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+     .calculator-buttons{
+        width: 25rem;
+        margin: 0 1rem;
+    }
+
+    .calculator-display{
+        width: 29rem;
+    }
+
+     .calculator-display h1{
+        font-size: 1.5rem;
+    }
+
+    button{
+        font-size: 2rem;
+        width: 99%;
+    }
+
+    
 }
